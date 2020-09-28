@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf‐8">
+<title> Mic + Delay </title> 
+</head>
+<body>
+  <div class="mic-in">
+    <h1></h1>
+    <input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
+      <datalist id="gain-vals">
+        <option value="0" label="min">
+        <option value="1" label="max">
+      </datalist>
+      <label for="volume">Vol</label>
+      <br>
+      <input type="range" id="delay" class="control-delay" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="delay" />
+      <datalist id="delay-vals">
+        <option value="0" label="min">
+        <option value="1" label="max">
+      </datalist>
+      <label for="delay">Delay Time</label>
+      <br>
+      <input type="range" id="delay_feedback" class="control-delay_feedback" min="0" max="0.5" value="0" list="gain-vals" step="0.01" data-action="delay_feedback" />
+      <datalist id="delay_feedback-vals">
+        <option value="0" label="min">
+        <option value="0.5" label="max">
+      </datalist>
+      <label for="delay_feedback">Delay Feedback</label>
+    
+  </div>
+  <div>
+        <a class="mute">Mute</a>
+      </div>
+</body>
+
+<script src="mic_delay.js"></script>
+
+<style type="text/css">
+  .mic-in
+  allign-center
+</style>
+
+</html>
