@@ -5,40 +5,187 @@
 <title> Mic + Delay </title> 
 </head>
 <body>
+	<h1></h1>
+
   <div class="mic-in">
-    <h1></h1>
-    <input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume" />
-      <datalist id="gain-vals">
+  	<h2>DELAY</h2>
+    
+    <input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume"/>
+      
+    <datalist id="gain-vals">
         <option value="0" label="min">
         <option value="1" label="max">
-      </datalist>
-      <label for="volume">Vol</label>
-      <br>
-      <input type="range" id="delay" class="control-delay" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="delay" />
-      <datalist id="delay-vals">
+    </datalist>
+    <label class="params" for="volume">Gain</label>
+    <br>
+      
+    <input type="range" id="delay" class="control-delay" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="delay" />
+      
+    <datalist id="delay-vals">
         <option value="0" label="min">
         <option value="1" label="max">
-      </datalist>
-      <label for="delay">Delay Time</label>
-      <br>
-      <input type="range" id="delay_feedback" class="control-delay_feedback" min="0" max="0.5" value="0" list="gain-vals" step="0.01" data-action="delay_feedback" />
-      <datalist id="delay_feedback-vals">
-        <option value="0" label="min">
-        <option value="0.5" label="max">
-      </datalist>
-      <label for="delay_feedback">Delay Feedback</label>
+    </datalist>
+    <label class="params" for="delay">Delay Time</label>
+    <br>
+     
+    <input type="range" id="delay_feedback" class="control-delay_feedback" min="0" max="0.5" value="0" list="gain-vals" step="0.01" data-action="delay_feedback" />
+    <datalist id="delay_feedback-vals">
+      <option value="0" label="min">
+      <option value="0.5" label="max">
+    </datalist>
+    <label class="params" for="delay_feedback">Delay Feedback</label>
+    <br>
+    <br>
+    <div>
+    <a class="mute">Mute</a>
+    </div>
     
   </div>
-  <div>
-        <a class="mute">Mute</a>
-      </div>
+  
+  <div class="info">
+  	<h3> Descripción del proceso</h3>
+  	
+  	<p class="text"> El proceso de delay, toma una muestra de la señal y la guarda en un buffer para volverla a reproducir generando una resultante de "eco".
+  	</p>
+  	<hr>
+  	<h3> Parámetros </h3>
+  	
+  	
+  		<p class="text"><strong>Vol</strong>
+  		<br> Regula la ganancia o volumen de la salida
+  		 <br>
+  		 <br>
+  		<strong>Delay time</strong> 
+  		<br>Tiempo de retardo de reproducción 
+  		<br>
+  		<br>
+  		<strong>Delay Feedback</strong> 
+  		<br>Cantidad de señal que vuelve a la entrada </p>
+  	
+   </div>
+
+  		
+
+
+
+  
 </body>
 
 <script src="mic_delay.js"></script>
 
 <style type="text/css">
-  .mic-in
-  allign-center
+	body {
+		background: linear-gradient( 
+			45deg, #000, #555);
+	}
+	h2 {
+		font-family: monospace;
+		color: #AAA;
+		font-size: 20px;
+
+	}
+	h1 {
+		font-family: monospace;
+		color: silver;
+		border-style: dashed;
+		border-color: silver;
+		border-width: 1px;
+		border-radius: 5px;
+		width: 250px;
+		margin-left: 200px;
+		font-size: 18px;
+		text-align: center;
+		padding: 1px;
+		opacity: 0.6;
+		animation-name: inout;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+	@keyframes inout {
+		50% {
+			opacity:0.1;
+			right: 10%;
+		}
+
+	}
+	h3 {
+		color: #666;
+		text-align: center;
+		font-family: monospace;
+	}
+	
+	
+
+	 }
+	 p {
+		color: #888;
+	}
+	.text {
+		font-family: monospace;
+		color: #777;
+		font-size: 12px;
+		background-color: rgba(100,100,100,0.1);
+	}
+	.mic-in {
+		background-color:#222;
+		border-style: solid;
+		border-color: white;
+		border-width: 2px;
+		border-radius: 10px;
+		text-align: center;
+		padding: 5px;
+		width: 150px;
+		height: 250px;
+		margin-right:150px;
+		margin-left: 230px;
+		box-shadow: 0 10px 20px 
+					rgba(100,100,100,0.6), 
+					0 6px 6px 
+					rgba(100,100,100,0.6);
+
+
+	}
+	.mute {
+		border-style: solid;
+		border-color: white;
+		border-width: 1px;
+		border-radius: 5px;
+		text-align: center;
+		font-family: monospace;
+		color: silver;
+		padding: 2px;
+		
+
+
+
+	}
+	.params {
+		font-family: monospace;
+		color: white;
+		position: relative;
+		bottom: 13px;
+
+	}
+	.info {
+		height: 400px;
+		width: 200px;
+		margin-top: 10px;
+		margin-left: 210px;
+		border-style: dotted;
+		border-color: #AAA;
+		border-width: 1px;
+		padding: 5px;
+		text-align: center;
+		box-shadow: 0 10px 10px 
+					rgba(100,100,100,0.6), 
+					0 6px 6px 
+					rgba(100,100,100,0.6);
+	}
+	
+	
+	
+
+ 
 </style>
 
 </html>
