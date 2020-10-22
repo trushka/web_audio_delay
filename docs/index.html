@@ -11,29 +11,15 @@
   	<h2>DELAY</h2>
     
     <input type="range" id="volume" class="control-volume" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="volume"/>
-      
-    <datalist id="gain-vals">
-        <option value="0" label="min">
-        <option value="1" label="max">
-    </datalist>
     <label class="params" for="volume">Gain</label>
     <br>
       
     <input type="range" id="delay" class="control-delay" min="0" max="1" value="0" list="gain-vals" step="0.01" data-action="delay" />
-      
-    <datalist id="delay-vals">
-        <option value="0" label="min">
-        <option value="1" label="max">
-    </datalist>
-    <label class="params" for="delay">Delay Time</label>
+    <label class="params" for="delay">Time</label>
     <br>
      
     <input type="range" id="delay_feedback" class="control-delay_feedback" min="0" max="0.5" value="0" list="gain-vals" step="0.01" data-action="delay_feedback" />
-    <datalist id="delay_feedback-vals">
-      <option value="0" label="min">
-      <option value="0.5" label="max">
-    </datalist>
-    <label class="params" for="delay_feedback">Delay Feedback</label>
+    <label class="params" for="delay_feedback"> Feedback</label>
     <br>
     <br>
     <div>
@@ -45,7 +31,7 @@
   <div class="info">
   	<h3> Descripción del proceso</h3>
   	
-  	<p class="text"> Consiste en la múltiplicación
+  	<p class="text"> Consiste en la multiplicación
   		y retraso de una señal de audio.  Una vez procesada la señal se mezcla con la original. El resultado es el clásico efecto de eco sonoro. 
   	</p>
   	<hr>
@@ -56,11 +42,11 @@
   		<br> Regula la ganancia o volumen de la salida de audio
   		 <br>
   		 <br>
-  		<strong>Delay time</strong> 
+  		<strong>Time</strong> 
   		<br>Tiempo de retraso de la señal de audio 
   		<br>
   		<br>
-  		<strong>Delay Feedback</strong> 
+  		<strong>Feedback</strong> 
   		<br>Cantidad de señal que vuelve a la entrada y por ende la cantidad de veces que se reproduce el sonido</p>
   	
    </div>
@@ -78,6 +64,8 @@
 	body {
 		background: linear-gradient( 
 			45deg, #000, #555);
+
+
 	}
 	h2 {
 		font-family: monospace;
@@ -93,7 +81,7 @@
 		border-width: 1px;
 		border-radius: 5px;
 		width: 250px;
-		margin-left: 200px;
+		margin-left: 27%;
 		font-size: 18px;
 		text-align: center;
 		padding: 1px;
@@ -101,6 +89,7 @@
 		animation-name: inout;
 		animation-duration: 2s;
 		animation-iteration-count: infinite;
+
 	}
 	@keyframes inout {
 		50% {
@@ -137,8 +126,7 @@
 		padding: 5px;
 		width: 150px;
 		height: 250px;
-		margin-right:150px;
-		margin-left: 230px;
+		margin-left: 30%;
 		box-shadow: 0 10px 20px 
 					rgba(100,100,100,0.6), 
 					0 6px 6px 
@@ -171,7 +159,7 @@
 		height: 400px;
 		width: 200px;
 		margin-top: 10px;
-		margin-left: 210px;
+		margin-left: 28%;
 		border-style: dotted;
 		border-color: #AAA;
 		border-width: 1px;
